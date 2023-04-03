@@ -4,10 +4,93 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+
+    <title>Calcu-Ai</title>
+    <link rel="stylesheet" href="/dist/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="/static/img/Svg/favicon logo.svg"
+      type="image/x-icon"
+    />
   </head>
   <body>
-    <div id="app">opa</div>
+    <header class="top-header">
+      <img
+        src="./static/img/logo/logo.svg"
+        alt=""
+        class="img-dark"
+        id="logoDark"
+      />
+      <div class="links-header">
+        <button id="start" class="start-me">Inicio</button>
+        <button id="about-me" class="about-me-me">Sobre nós</button>
+        <button id="contact" class="contact-me">Contato</button>
+        <!-- <button class="btn-changer" id="btn-change"></button> -->
+
+        <input
+          type="checkbox"
+          name="checkbox"
+          class="checkbox"
+          id="theme"
+          value="theme"
+        />
+        <label class="label" for="theme">
+          <img class="svg-moon" src="./static/img/Svg/moon.svg" alt="" />
+          <img class="svg-sun" src="./static/img/Svg/Sol.svg" alt="" />
+          <div class="ball"></div>
+        </label>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <img src="./static/img/Svg/logo-body.svg" alt="" />
+        <p>Faça suas contas matemáticas com inteligência</p>
+        <div class="box">
+          <table>
+            <p id="resultado"></p>
+            <tr>
+              <td><button class="cal" onclick="clean()">C</button></td>
+              <td><button class="cal" onclick="back()">&#60;</button></td>
+              <td><button class="cal" onclick="insert('/')">/</button></td>
+              <td><button class="cal" onclick="insert('*')">X</button></td>
+            </tr>
+            <tr>
+              <td><button class="cal" onclick="insert('7')">7</button></td>
+              <td><button class="cal" onclick="insert('8')">8</button></td>
+              <td><button class="cal" onclick="insert('9')">9</button></td>
+              <td><button class="cal" onclick="insert('-')">-</button></td>
+            </tr>
+            <tr>
+              <td><button class="cal" onclick="insert('4')">4</button></td>
+              <td><button class="cal" onclick="insert('5')">5</button></td>
+              <td><button class="cal" onclick="insert('6')">6</button></td>
+              <td><button class="cal" onclick="insert('+')">+</button></td>
+            </tr>
+            <tr>
+              <td><button class="cal" onclick="insert('1')">1</button></td>
+              <td><button class="cal" onclick="insert('2')">2</button></td>
+              <td><button class="cal" onclick="insert('3')">3</button></td>
+              <td rowspan="2">
+                <button class="btn-igual" onclick="somar()">=</button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <button class="btn-zero" onclick="insert('0')">0</button>
+              </td>
+              <td><button class="cal" onclick="insert('.')">.</button></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </main>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>

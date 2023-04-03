@@ -1,0 +1,466 @@
+// @import "./Global.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+:root {
+  --font-body:font-family: 'Poppins', sans-serif;
+  --font-weight-header: font-weight: 400;
+  --font-weight-body-hover: font-weight: 700; 
+
+  --bg-color-dark:#18181A;
+  --bg-color-light:#ffffff;
+
+  --bg-color-dark-button:#29292D;
+  --bg-color-dark-input: #202023;
+  --bg-color-dark-font-input:#868686;
+
+  --bg-color-light-button: #f1f1fd;
+  --bg-color-light-input-outlineBorder: #E9E9FF;
+  --bg-color-light-font-button: #7979FF;
+
+
+  --bg-color-button-selected: #0094FF;
+  --bg-color-button-light-concluted: #C0C0EB;
+  --bg-color-button-dark-concluted: #1c5fc4;
+
+
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--bg-color-dark);
+  transition: all 200ms ease-in;
+  // overflow: hidden;
+  
+  .top-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 4.0rem;
+    max-width: 100%;
+    min-width: 480px;
+
+    
+    .links-header{
+      display: flex;
+      background-color: transparent;
+      gap: 1rem;
+      
+      .checkbox{
+        opacity: 0;
+        // position: absolute;
+      }
+      
+      .label{
+        background-color: var(--bg-color-dark-button);
+        border-radius: 2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // position: relative;
+        
+        padding: 1rem 0.5rem;
+        width: 4rem;
+        height: 0.5rem;
+        
+        img{
+          width: 100%;
+          height: 2rem;
+        }
+        
+        transform: scale(1.5);
+        
+        .ball{
+          background-color: #ffffff;
+          border-radius: 50rem;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          
+          top: 0.29rem;
+          left: 0.3rem;
+
+          width: 2rem;
+          height: 2rem;
+          
+          transform: translateX(0rem);
+          transition: transform 0.2s linear;
+          animation-timing-function: checkbox ;
+          
+          
+        }
+        
+      }
+      .checkbox:checked + .label .ball{
+        transform: translateX(2.38rem);
+      }
+      
+      button{
+        background-color: transparent;
+        border-color: transparent;
+        font-family: 'poppins', sans-serif;
+        border-radius: 1rem;
+        color: var(--bg-color-dark-font-input);
+        font-weight: var(--font-weight-body-hover);
+        font-family: 'poppins', sans-serif;
+        
+        &:hover{
+          background-color: #29292D;
+          color: var(--bg-color-button-selected);
+          font-weight: 700;
+          cursor: pointer;
+          
+        }
+      }
+    }
+    
+    
+    // .box{
+      
+      // }
+    }
+    
+    .container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 100%;
+      min-width: 560px;
+      
+      p{
+        font-family: 'poppins', sans-serif;
+        font-size: 2rem;
+        font-weight: 500;
+        color: var(--bg-color-dark-font-input);
+      }
+    }
+    
+    .box{
+      display: contents;
+      text-align: center;
+      height: 3rem;
+
+
+      #resultado{
+        background-color: var(--bg-color-dark-input);
+        width: 41rem;
+        border-radius: 50rem;
+        color: var(--bg-color-dark-font-input);
+        font-weight: 400;
+        text-align: start;
+        margin: 1rem;
+        gap: 1rem;
+        padding-left: 3rem;
+
+        height: 6rem;
+        // padding: 2rem 30rem 2rem 3rem;
+        // text-align: start;
+        display: flex;
+        align-items: center;
+      }
+      
+      table{
+        
+        display: flex;
+        gap: 1rem;
+        
+        .cal{
+          margin: 0.4rem;
+          padding: 0;
+          border-radius: 1.3rem;
+          border: none;
+          width: 9.5rem;
+          height: 9.5rem;
+          background-color: var(--bg-color-dark-button);
+          font-family: 'poppins', sans-serif;
+          color: var(--bg-color-dark-font-input);
+              font-size: 2rem;
+              
+              
+              &:hover{
+                cursor: pointer;
+                background-color: var(--bg-color-dark-input);
+              }
+
+              
+            }
+            .btn-igual{
+              padding: 0;
+              border-radius: 1.3rem;
+              border: none;
+              width: 100%;
+              height: 20rem;
+              background-color: var(--bg-color-button-selected);
+              font-family: 'poppins', sans-serif;
+              color: #fff;
+              font-size: 2rem;
+              &:hover{
+                cursor: pointer;
+                background-color: var(--bg-color-button-dark-concluted);
+              }
+            }
+            
+            .btn-zero{
+              padding: 0;
+              border-radius: 1.3rem;
+              border: none;
+              width: 100%;
+              height: 9.8rem;
+              background-color: var(--bg-color-dark-button);
+              font-family: 'poppins', sans-serif;
+              color: var(--bg-color-dark-font-input);
+              font-size: 2rem;
+              
+              &:hover{
+                cursor: pointer;
+                background-color: var(--bg-color-dark-input);
+              }
+            }
+            
+          }     
+          
+          
+        }
+      }
+      
+      ::-webkit-scrollbar {
+        width: 1rem; /* largura */
+      }
+      
+      /* estilizando o track da scrollbar */
+      ::-webkit-scrollbar-track {
+        background-color: var(--bg-color-dark-input);
+      }
+      
+      /* estilizando o thumb da scrollbar */
+      ::-webkit-scrollbar-thumb {
+        background-color: var(--bg-color-dark-button);
+        border-radius: 5rem;
+      }
+      
+      /* estilizando o thumb quando hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #0077ff;
+      }
+      
+
+      
+      body.dark{
+        background-color: var(--bg-color-light);
+        // overflow: hidden;
+        
+        .top-header{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1.6rem 4.0rem;
+          max-width: 100%;
+          min-width: 480px;
+
+          .img-dark{
+            background-image: url(/img/logo/loo-light.svg);
+          }
+
+          
+          
+          .links-header{
+            display: flex;
+            background-color: transparent;
+            gap: 1rem;
+            
+            .checkbox{
+              opacity: 0;
+              // position: absolute;
+            }
+            
+            .label{
+              background-color: hsla(0, 0%, 11%, 0.158);
+              border-radius: 2rem;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              // position: relative;
+              
+              padding: 1rem 0.5rem;
+              width: 4rem;
+              height: 0.5rem;
+              
+              img{
+                width: 100%;
+                height: 2rem;
+              }
+              
+              transform: scale(1.5);
+              
+              .ball{
+                background-color: #ffffff;
+                border-radius: 50rem;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                
+                top: 0.29rem;
+                left: 0.3rem;
+      
+                width: 2rem;
+                height: 2rem;
+                
+                transform: translateX(0rem);
+                transition: transform 0.2s linear;
+                animation-timing-function: checkbox ;
+                
+                
+              }
+              
+            }
+            .checkbox:checked + .label .ball{
+              transform: translateX(2.38rem);
+            }
+            
+            button{
+              background-color: transparent;
+              border-color: transparent;
+              font-family: 'poppins', sans-serif;
+              border-radius: 1rem;
+              color: var(--bg-color-dark-font-input);
+              font-weight: var(--font-weight-body-hover);
+              font-family: 'poppins', sans-serif;
+              
+              &:hover{
+                background-color: hsla(0, 0%, 11%, 0.043);
+                color: var(--bg-color-button-selected);
+                font-weight: 700;
+                cursor: pointer;
+                
+              }
+            }
+          }
+          
+          
+          // .box{
+            
+            // }
+          }
+          
+          .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 100%;
+            min-width: 560px;
+            
+            p{
+              font-family: 'poppins', sans-serif;
+              font-size: 2rem;
+              font-weight: 500;
+              color: #5f5fc5;
+            }
+          }
+          
+          .box{
+            display: contents;
+            text-align: center;
+            
+            #resultado{
+              background-color: transparent;
+              border: var(--bg-color-light-input-outlineBorder) solid 3px;
+              width: 41rem;
+              // border-radius: 50rem;
+              border-radius: 50rem;
+              color: var(--bg-color-light-font-button);
+              font-weight: 400;
+              text-align: start;
+              margin: 1rem;
+              gap: 1rem;
+              padding-left: 3rem;
+
+              height: 6rem;
+              // padding: 2rem 30rem 2rem 3rem;
+              // text-align: start;
+              display: flex;
+              align-items: center;
+              // padding: 2rem 30rem 2rem 3rem;
+            }
+            
+            table{
+              
+              display: flex;
+              gap: 1rem;
+              
+              .cal{
+                margin: 0.4rem;
+                padding: 0;
+                border-radius: 1.3rem;
+                border: none;
+                width: 9.5rem;
+                height: 9.5rem;
+                background-color: var(--bg-color-light-button);
+                font-family: 'poppins', sans-serif;
+                color: var(--bg-color-light-font-button);
+                    font-size: 2rem;
+                    
+                    
+                    &:hover{
+                      cursor: pointer;
+                      background-color: #dedefb;
+                    }
+      
+                    
+                  }
+                  .btn-igual{
+                    padding: 0;
+                    border-radius: 1.3rem;
+                    border: none;
+                    width: 100%;
+                    height: 20rem;
+                    background-color: var(--bg-color-button-light-concluted);
+                    font-family: 'poppins', sans-serif;
+                    color: #fff;
+                    font-size: 2rem;
+                    &:hover{
+                      cursor: pointer;
+                      background-color: var(--bg-color-light-font-button);
+                    }
+                  }
+                  
+                  .btn-zero{
+                    padding: 0;
+                    border-radius: 1.3rem;
+                    border: none;
+                    width: 100%;
+                    height: 9.8rem;
+                    background-color: var(--bg-color-light-button);
+                    font-family: 'poppins', sans-serif;
+                    color: var(--bg-color-light-font-button);
+                    font-size: 2rem;
+                    
+                    &:hover{
+                      cursor: pointer;
+                      background-color: #dedefb;
+                    }
+                  }
+                  
+                }     
+                
+                
+              }
+            }
